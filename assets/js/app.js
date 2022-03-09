@@ -372,6 +372,9 @@
 })(window, document, jQuery);
 
 document.querySelector(".axil-contact-form").addEventListener("submit", submitForm);
+document.querySelector(".sub-form").addEventListener("submit", submitSub);
+document.querySelector(".sub-form1").addEventListener("submit", submitSub1);
+
 
 function submitForm(e) {
     e.preventDefault();
@@ -382,20 +385,31 @@ function submitForm(e) {
 
     document.querySelector(".axil-contact-form").reset();
 
-    sendEmail(name, email, message);
+    var x = document.getElementsByName("mc-embedded-subscribe-form");
+    document.querySelector("#mce-EMAIL").value = email;
+    x[0].submit();
 }
 
-function sendEmail(name, email, message) {
-    Email.send({
-        Host: "smtp.gmail.com",
-        Username: "codinggrams4@gmail.com",
-        Password: "Sujith1234@",
-        To: "codinggrams4@gmail.com",
-        From: 'codinggrams4@gmail.com',
-        Subject: `${name} submitted a form`,
-        Body: `Name: ${name} <br/> Email: ${email} <br/> Message: ${message}`,
-    }).then((message) => {
-        console.log(message);
-        alert('Form Submitted Successfully')
-    });
+function submitSub(e) {
+    e.preventDefault();
+    let name = "subscribe";
+    let email = document.querySelector("#sub-email").value;
+
+    document.querySelector(".sub-form").reset();
+
+    var x = document.getElementsByName("mc-embedded-subscribe-form");
+    document.querySelector("#mce-EMAIL").value = email;
+    x[0].submit();
+}
+
+function submitSub1(e) {
+    e.preventDefault();
+    let name = "subscribe";
+    let email = document.querySelector("#sub-email1").value;
+
+    document.querySelector(".sub-form1").reset();
+
+    var x = document.getElementsByName("mc-embedded-subscribe-form");
+    document.querySelector("#mce-EMAIL").value = email;
+    x[0].submit();
 }
