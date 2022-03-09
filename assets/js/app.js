@@ -370,3 +370,32 @@
     axilInit.i();
 
 })(window, document, jQuery);
+
+document.querySelector(".axil-contact-form").addEventListener("submit", submitForm);
+
+function submitForm(e) {
+    e.preventDefault();
+
+    let name = document.querySelector(".form-name").value;
+    let email = document.querySelector(".form-email").value;
+    let message = document.querySelector(".form-textarea").value;
+
+    document.querySelector(".axil-contact-form").reset();
+
+    sendEmail(name, email, message);
+}
+
+function sendEmail(name, email, message) {
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "codinggrams4@gmail.com",
+        Password: "Sujith1234@",
+        To: "codinggrams4@gmail.com",
+        From: 'codinggrams4@gmail.com',
+        Subject: `${name} submitted a form`,
+        Body: `Name: ${name} <br/> Email: ${email} <br/> Message: ${message}`,
+    }).then((message) => {
+        console.log(message);
+        alert('Form Submitted Successfully')
+    });
+}

@@ -199,14 +199,14 @@
                     <div class="col-xl-5 col-lg-6">
                         <div class="contact-form-box shadow-box mb--30">
                             <h3 class="title">Book a free call now!</h3>
-                            <form method="POST" action="mail.php" class="axil-contact-form">
+                            <form  class="axil-contact-form">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" class="form-control" name="contact-name">
+                                    <input type="text" class="form-control form-name" name="contact-name">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" class="form-control" name="contact-email">
+                                    <input type="email" class="form-control form-email" name="contact-email">
                                 </div>
                                 <!-- <div class="form-group">
                                     <label>Company</label>
@@ -214,7 +214,7 @@
                                 </div> -->
                                 <div class="form-group mb--40">
                                     <label>How can we help you?</label>
-                                    <textarea name="contact-message" id="contact-message" class="form-control textarea" cols="30" rows="4"></textarea>
+                                    <textarea name="contact-message" id="contact-message" class="form-control form-textarea textarea" cols="30" rows="4"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="axil-btn btn-fill-primary btn-fluid btn-primary" name="submit-btn">Book a free call</button>
@@ -227,6 +227,9 @@
                             <h4 class="title">Phone</h4>
                             <p>Our customer care is open from Mon-Sat, 09:00 am to 7:00 pm</p>
                             <h4 class="phone-number"><a href="tel:7032575281">703 257 5281</a></h4>
+                            <br/>
+                            <h4 class="phone-number"><a href="tel:9573274439">957 327 4439</a></h4>
+                            <p style="font-size: 12px;">(Click number to make call)</p>
                         </div>
                         <div class="contact-info mb--30">
                             <h4 class="title">Email</h4>
@@ -473,6 +476,9 @@
     <script src="assets/js/vendor/tilt.js"></script>
     <script src="assets/js/vendor/green-audio-player.min.js"></script>
     <script src="assets/js/vendor/jquery.nav.js"></script>
+
+    <!-- smtp -->
+    <script src="https://smtpjs.com/v3/smtp.js" ></script>
 
     <!-- Site Scripts -->
     <script src="assets/js/app.js"></script>
